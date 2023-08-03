@@ -1,2 +1,1 @@
-# my-notes
-The project helps to keep track of notes .
+# Note Taker Starter Code
