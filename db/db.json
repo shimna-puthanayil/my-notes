@@ -1,27 +1,22 @@
 [
     {
-        "title": "Picnic",
-        "text": "Picnic after lunch",
-        "id": "90b73077-007a-4d87-9d07-189cdd1322d1"
-    },
-    {
         "title": "Meeting",
-        "text": "Meeting Riya",
-        "id": "d8438d19-9bfc-4d05-85f2-5ea3d46c324e"
+        "text": "Meeting with client",
+        "id": "61e09960-cdb7-4d80-af7c-a1957605fab7"
     },
     {
-        "title": "Tennis",
-        "text": "cc",
-        "id": "9d215d91-046e-4fae-af40-213a1fdf7750"
+        "title": "Pay the bill",
+        "text": "Pay the electricity bill  before 7-8-23.",
+        "id": "56660127-730e-41ec-9167-9eac57cf32d8"
     },
     {
-        "title": "Singin",
-        "text": "c",
-        "id": "ced48682-1369-4dc2-a28a-69e96bc27fe2"
+        "title": "Book the ticket",
+        "text": "Book the plane ticket to London",
+        "id": "ef168b51-66a5-4e64-9418-f9b10198c987"
     },
     {
-        "title": "Hindi",
-        "text": "c",
-        "id": "6d130c57-dfb3-4e53-821c-0fffa7cee27a"
+        "title": "Presentation",
+        "text": "Project presentation on 25-8-23.",
+        "id": "c711afeb-48f8-4a8e-96ff-fd175af9175d"
     }
 ]
