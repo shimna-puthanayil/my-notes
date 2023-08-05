@@ -80,7 +80,7 @@ const handleNoteSave = () => {
 };
 
 
-
+// =========================================
 // const handleNoteSave = async() => {
 //   const newNote = {
 //     title: noteTitle.value,
@@ -94,7 +94,7 @@ const handleNoteSave = () => {
 //     renderActiveNote();
   
 // };
-
+// =========================================
 
 
 // Delete the clicked note
@@ -135,20 +135,6 @@ const handleRenderSaveBtn = () => {
     show(saveNoteBtn);
   }
 };
-
-// =========================================
-
-// async function fetchMoviesJSON() {
-//   const response = await fetch('/movies');
-//   const movies = await response.json();
-//   return movies;
-// }
-
-// fetchMoviesJSON().then(movies => {
-//   movies; // fetched movies
-// });
-
-// =========================================
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
