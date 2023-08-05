@@ -31,6 +31,7 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
+  
   });
 
 const saveNote = (note) =>
@@ -53,7 +54,7 @@ const deleteNote = (id) =>
 const renderActiveNote = () => {
   hide(saveNoteBtn);
 
-  if (activeNote.note_id) {
+  if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
@@ -71,11 +72,30 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
-  saveNote(newNote).then(() => {
+    saveNote(newNote)
+    .then((data) => {
     getAndRenderNotes();
     renderActiveNote();
   });
 };
+
+
+
+// const handleNoteSave = async() => {
+//   const newNote = {
+//     title: noteTitle.value,
+//     text: noteText.value,
+//   };
+//   const response=await saveNote(newNote);
+//   const res = await response.json();
+
+
+//     getAndRenderNotes();
+//     renderActiveNote();
+  
+// };
+
+
 
 // Delete the clicked note
 const handleNoteDelete = (e) => {
@@ -116,9 +136,28 @@ const handleRenderSaveBtn = () => {
   }
 };
 
+// =========================================
+
+// async function fetchMoviesJSON() {
+//   const response = await fetch('/movies');
+//   const movies = await response.json();
+//   return movies;
+// }
+
+// fetchMoviesJSON().then(movies => {
+//   movies; // fetched movies
+// });
+
+// =========================================
+
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
+
+
+// const renderNoteList =(notes) => {
+//   let jsonNotes = notes.json();
+  // console.log(`Notes ${jsonNotes}`)
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -161,7 +200,6 @@ const renderNoteList = async (notes) => {
   jsonNotes.forEach((note) => {
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
-
     noteListItems.push(li);
   });
 
@@ -171,8 +209,10 @@ const renderNoteList = async (notes) => {
 };
 
 // Gets notes from the db and renders them to the sidebar
-const getAndRenderNotes = () => getNotes().then(renderNoteList);
+// const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
+
+const getAndRenderNotes= () => getNotes().then(renderNoteList);
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
