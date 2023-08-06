@@ -31,7 +31,7 @@ const getNotes = () =>
     headers: {
       'Content-Type': 'application/json',
     },
-  
+
   });
 
 const saveNote = (note) =>
@@ -42,8 +42,6 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
   })
-  
-   
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -74,30 +72,12 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
-    saveNote(newNote)
+  saveNote(newNote)
     .then((data) => {
-    getAndRenderNotes();
-    renderActiveNote();
-  });
+      getAndRenderNotes();
+      renderActiveNote();
+    });
 };
-
-
-// =========================================
-// const handleNoteSave = async() => {
-//   const newNote = {
-//     title: noteTitle.value,
-//     text: noteText.value,
-//   };
-//   const response=await saveNote(newNote);
-//   const res = await response.json();
-
-
-//     getAndRenderNotes();
-//     renderActiveNote();
-  
-// };
-// =========================================
-
 
 // Delete the clicked note
 const handleNoteDelete = (e) => {
@@ -141,11 +121,6 @@ const handleRenderSaveBtn = () => {
 // Render the list of note titles
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
-
-
-// const renderNoteList =(notes) => {
-//   let jsonNotes = notes.json();
-  // console.log(`Notes ${jsonNotes}`)
   if (window.location.pathname === '/notes') {
     noteList.forEach((el) => (el.innerHTML = ''));
   }
@@ -197,10 +172,8 @@ const renderNoteList = async (notes) => {
 };
 
 // Gets notes from the db and renders them to the sidebar
-// const getAndRenderNotes = () => getNotes().then(renderNoteList);
+const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-
-const getAndRenderNotes= () => getNotes().then(renderNoteList);
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
