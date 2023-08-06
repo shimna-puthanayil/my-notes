@@ -36,13 +36,19 @@ OR
   npm start
   ```
 
+When the application is invoked using 'npm start' then the server will start at port 3001 and the application can be accessed by using the link http://localhost:3001
+
 The following images show the application's appearance and functionality :
 
-![LM 1](./images/notes.gif)
-![LM 1](./images/image2.png)
-![LM 2](./images/image3.png)
-![LM 3](./images/image4.png)
-![LM 5](./images/image6.png)
+![LM 1](./public/assets/images/notes.gif)
+
+![LM 1](./public/assets/images/image2.png)
+
+![LM 2](./public/assets/images/image3.png)
+
+![LM 3](./public/assets/images/image4.png)
+
+![LM 5](./public/assets/images/image6.png)
 
 
 ## Credits
